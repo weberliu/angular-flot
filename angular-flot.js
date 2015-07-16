@@ -44,7 +44,7 @@ angular.module('angular-flot', []).directive('flot', function () {
       });
 
       var init = function () {
-        var plotObj = $.plot(plotArea, scope.dataset, scope.options);
+        var plotObj = $.plot(plotArea, angular.copy(scope.dataset), angular.copy(scope.options));
 
         if (scope.callback) {
           scope.callback(plotObj);
